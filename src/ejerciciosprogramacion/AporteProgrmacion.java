@@ -15,7 +15,7 @@ public class AporteProgrmacion {
     public static void main(String[] args) {
         // TODO code application logic here
         int x, y, opc=0;
-        String S1="",S2="",ingreso;
+        String S1,S2 ,ingreso;
        
         while(opc!=-1){
             opc=MostrarMenu();
@@ -69,7 +69,7 @@ public class AporteProgrmacion {
 "S1 = \"La vida es bella\" S2 = \"El santo\"\n" +
 "La función debe devolver: \tvidb\nLa función recibirá 2 cadenas y devolver una cadena\n\n");
                 
-               S1= JOptionPane.showInputDialog("Ingrese S1");
+               S1= (JOptionPane.showInputDialog("Ingrese S1"));
                 
                  S2= JOptionPane.showInputDialog("Ingrese S2");
                 
@@ -103,6 +103,10 @@ public class AporteProgrmacion {
 "La función debe considerar la conversión: Todos los caracteres de AZ, A, E, I, O, U y Ñ.Otros caracteres seguirán siendo los mismos.\n" +
 "Limitación: La conversión debe hacerse teniendo en cuenta los valores ASCII. Obviamente no se puede utilizar las funciones proporcionadas por el lenguaje \n(toLowercase (), Lowercase (), etc.) No se puede tener una gran sentencia switch de los casos para cada letra, o un montón de if / else.\n" +
 "Esta función recibirá una cadena y devuelve una cadena");
+                
+                              
+                S1=(JOptionPane.showInputDialog("Ingrese una cadena que contenga letras (mayúsculas y minúsculas), números y caracteres especiales" ));
+               JOptionPane.showMessageDialog(null,Ejercicio7(S1));
                 break;
                 
             case 8:
@@ -366,4 +370,33 @@ public class AporteProgrmacion {
               }
           }
     }
+    
+    public static String Ejercicio7(String cadena1){
+        int codigoAscci,longitudCadena;
+        char letra;
+        String fraseResultante="";
+        String  aux;
+         longitudCadena = cadena1.length();    
+        char [] frase1= cadena1.toCharArray();    
+        for (int i = 0; i < longitudCadena; i++)
+        {
+            if (cadena1.codePointAt(i)>=65 && cadena1.codePointAt(i)<=90)
+            {
+                codigoAscci= cadena1.codePointAt(i);
+                codigoAscci =codigoAscci+32;
+                letra=(char)codigoAscci; 
+                fraseResultante=fraseResultante+letra;                    
+            }
+            else                  
+            {
+                fraseResultante=fraseResultante+frase1[i];                    
+            }          
+        
+       
+    }
+        return fraseResultante; 
+    
+    
+}
+    
 }
