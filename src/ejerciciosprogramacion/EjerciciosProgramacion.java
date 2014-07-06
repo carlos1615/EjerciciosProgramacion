@@ -10,6 +10,7 @@ import static ejerciciosprogramacion.Ejercicio06.orden_inverso;
 import static ejerciciosprogramacion.Ejercicio07.MayúsculasMinúsculas;
 import static ejerciciosprogramacion.Ejercicio08.ContarA;
 import static ejerciciosprogramacion.Ejercicio09.potencia;
+import static ejerciciosprogramacion.Ejercicio11.Repite;
 import static ejerciciosprogramacion.Ejercicio14.serie_14;
 import static ejerciciosprogramacion.Ejercicio16.Serie_16;
 import static ejerciciosprogramacion.Ejercicio19.Binario;
@@ -162,6 +163,11 @@ public class EjerciciosProgramacion {
 "1 se repite 2 veces, 5 se repite 3 veces, 3 se repite 2 veces, 4 se repite 2 veces 2 se repite 2 veces\n" +
 "El número que más se repite es 5 La función debe devolver:.. 5 (5 Porque se repite 3 veces en la matriz).\n" +
 "La función recibirá una matriz de enteros y devolver un entero.");
+                 int num=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en X"));
+          x = num;
+        int num1=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en Y"));
+          y = num1;
+          Repite(x,y);
                 break;
 
             case 12:
@@ -192,10 +198,10 @@ public class EjerciciosProgramacion {
 "La función recibirá 3 enteros, devolver un entero. ");
                 //Ejercicio 14
         
-            int num=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en X"));
-            x = num;
-            int num1=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en Y"));
-            y = num1;
+            int nu=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en X"));
+            x = nu;
+            int nu1=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en Y"));
+            y = nu1;
             int num2=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en Z"));
             z = num2;
             JOptionPane.showMessageDialog(null, "El valor en X y Y es " + serie_14(x,y,z));
