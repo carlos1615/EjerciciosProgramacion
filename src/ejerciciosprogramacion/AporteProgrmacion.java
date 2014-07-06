@@ -116,7 +116,7 @@ public class AporteProgrmacion {
                             + "La función recibirá una cadena y devolver un entero.\n"
                             + "Limitaciones: No utilice el split (función), o similar.");
 
-                    ingreso = (JOptionPane.showInputDialog("Ingrese una cadena, \nlas palabras siempre están separadas por \nun espacio, una coma, un punto y coma o \nun punto."));
+                    ingreso = " "+(JOptionPane.showInputDialog("Ingrese una cadena, \nlas palabras siempre están separadas por \nun espacio, una coma, un punto y coma o \nun punto."))+" ";
                     JOptionPane.showMessageDialog(null, "Palabras que contienen a :" + Ejercicio8(ingreso));
                     break;
                 case 9:
@@ -160,12 +160,13 @@ public class AporteProgrmacion {
                             + "La función recibe un arreglo de enteros y devuelve un entero.");
                     break;
                 case 13:
-                    JOptionPane.showMessageDialog(null, "Ejercicio 13\n Se le da una matriz con números enteros positivos y negativos. Escriba una función para cambiar el orden de los elementos de la matriz de tal manera que los enteros negativos estén al principio, los enteros positivos queden al final. Cero (0) y números enteros que tienen el mismo signo no cambia el orden.\n"
+                    JOptionPane.showMessageDialog(null, "Ejercicio 13\n Se le da una matriz con números enteros positivos y negativos."
+                            + " Escriba una función para cambiar el orden de los elementos de la matriz de tal manera que los enteros\n negativos estén al principio, los enteros positivos queden al final.\n Cero (0) y números enteros que tienen el mismo signo no cambia el orden.\n"
                             + "Por ejemplo, si la función recibe: a[0] = 4; a[1] = -3; a[2] = -100; a[3] = 7; a[4] = 0; a[5] = 1; a[6] = -6;\n"
                             + "la función debe devolver:\n"
                             + "a[0] = -3; a[1] = -100; a[2] = -6; a[3] = 4; a[4] = 7; a[5] = 0; a[6] = 1;\n"
                             + "La función recibe un arreglo de enteros y devuelve un array de enteros.\n"
-                            + "Limitaciones: Usted no puede utilizar métodos proporcionados por el lenguaje de clasificación. (Por ejemplo, Array.sort (), sort (), etc ..). Si usted lo necesita, debe crear su propia implementación de la función de clasificación.");
+                            + "Limitaciones: Usted no puede utilizar métodos proporcionados por el lenguaje de clasificación.\n (Por ejemplo, Array.sort (), sort (), etc ..). Si usted lo necesita, debe crear su propia implementación de la función de clasificación.");
                     while (x <= 0) {
                         ingreso = JOptionPane.showInputDialog(null, "Ingrese la longitud del areglo");
                         x = Integer.parseInt(ingreso);
@@ -178,7 +179,12 @@ public class AporteProgrmacion {
                         ingreso = JOptionPane.showInputDialog(null, "Ingrese el elemento " + (i + 1) + "del arreglo ");
                         arreglo[i] = Integer.parseInt(ingreso);
                     }
-                    JOptionPane.showMessageDialog(null, Ejercicio13(arreglo));
+                    //int[] recorrido =Ejercicio13(arreglo);
+                    for (int i = 0; i < Ejercicio13(arreglo).length; i++) {
+                         JOptionPane.showMessageDialog(null, Ejercicio13(arreglo)[i]);
+                    }
+                    
+                   // JOptionPane.showMessageDialog(null, Ejercicio13(arreglo));
                     break;
                 case 14:
                     JOptionPane.showMessageDialog(null, "Ejercicio 14\n Mira esta serie: 53, 35, 64, 46, 75, 57, 86 , 68, 97, 79, 108, 810, 119, 911, 1210, 1012, ... las semillas de esta serie fueron los números 5 y 3.\n"
@@ -358,7 +364,7 @@ public class AporteProgrmacion {
     public static int Ejerccio1(int valorx, int valory) {
         int[] vector = new int[498];
         int i, par = 8, impar = 7, suma = 0;
-        if (((valorx <= 0) || (valory <= 0)) || ((valorx > 255))) {
+        if (((valorx <= 0) || (valory <= 0)) || ((valorx > 255))||(valory<255)) {
             return (-1);
         }
         for (i = 0; i < vector.length; i++) {
@@ -381,7 +387,7 @@ public class AporteProgrmacion {
     public static int Ejerccio2(int valorx, int valory) {
 
         int i, factorial = 1;
-        if (((valorx <= 0) || (valory <= 0)) || ((valorx > 255))) {
+        if ((valorx <= 0) || (valory <= 0) || ((valorx > 255))||(valory<255)) {
             return (-1);
         }
         for (i = 1; i <= valory; i++) {
@@ -393,7 +399,7 @@ public class AporteProgrmacion {
 
     public static float Ejerccio3(int valorx, int valory) {
         float res;
-        if (((valorx <= 0) || (valory <= 0)) || ((valorx > 255) || (valory > 255))) {
+        if ((valorx <= 0) || (valory <= 0) || (valorx > 255) || (valory > 255)) {
             return (-1);
         }
         res = (float) valorx / valory;
@@ -451,7 +457,7 @@ public class AporteProgrmacion {
 
     private static int Ejercicio8(String cadena) {
         int contador = 0;
-
+        
         char[] frase;
         frase = cadena.toCharArray();
         for (int i = 0; i < cadena.length(); i++) {
@@ -525,7 +531,8 @@ public class AporteProgrmacion {
                 cont = cont + 2;
             } while (z >= cont);
         }
-        return vector[z - 1];
+        Z=(int)vector[z - 1];
+        return Z;
     }
 
     public static int Ejercicio16(int x, int y, int z) {
@@ -567,7 +574,7 @@ public class AporteProgrmacion {
         }
         return valores;
     }
-
+//incompleto
     public static int Ejercicio19(int num) {
         int cociente = 0, residuo = 0, binario = 0;
         while (num >= 2) {
