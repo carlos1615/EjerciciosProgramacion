@@ -16,18 +16,20 @@ import javax.swing.JOptionPane;
  * @author Carlos
  */
 public class Ejercicio06 {
-   public static void main(String [] args)throws IOException {
+   public static String orden_inverso(String frase)throws IOException {
 
 //      BufferedReader a=new BufferedReader(new InputStreamReader(System.in));
-String frase;
-      frase=JOptionPane.showInputDialog("Ingrese una frase : ");
+
+      
       String []Caracter=frase.split(" ");
       JOptionPane.showMessageDialog(null, frase);
 
       for(int i=Caracter.length-1;i>=0;i--){
           System.out.print(Caracter[i]+" ");
+          
 //          JOptionPane.showMessageDialog(null, Caracter[i]+ "");
       }
+       return frase;
       
 
     }

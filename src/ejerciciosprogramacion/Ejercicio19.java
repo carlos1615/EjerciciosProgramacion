@@ -13,38 +13,27 @@ import javax.swing.JOptionPane;
  * @author Carlos
  */
 public class Ejercicio19 {
-    public static void main(String[] args){
+      public static int Binario(int numero){
             int r=0,c=0;
-            
-        int numero, exp, digito;
+            int  exp, digito;
         double binario;
+         
         
-
-        do{  
-            int x=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en X"));
-            numero=x;
-        }while(numero<0);
-
+        while(numero<0);
         exp=0;
         binario=0;
         while(numero!=0){
-                digito = numero % 2;            
-                binario = binario + digito * Math.pow(10, exp);   
-                exp++;
+                digito = numero % 2; 
                 numero = numero/2;
+                binario = binario + digito * Math.pow(10, exp);   
+               if (digito==1) {
+                c=c+1;
+                }
+  exp++;
         }
-        int y = (int) binario; 
-        
-            
-        
-//        System.out.printf("Binario: %.0f %n", binario);
-        
+         int y = (int) binario; 
         JOptionPane.showMessageDialog(null, "El valor binario es " +y);
-       
-        
-           
- 
-                
-            
-    }
+         JOptionPane.showMessageDialog(null, "El numero de 1 de este binario contiene " +c);
+         return c;
+       }
 }

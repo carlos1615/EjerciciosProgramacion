@@ -6,6 +6,14 @@
 
 package ejerciciosprogramacion;
 
+import static ejerciciosprogramacion.Ejercicio06.orden_inverso;
+import static ejerciciosprogramacion.Ejercicio07.MayúsculasMinúsculas;
+import static ejerciciosprogramacion.Ejercicio08.ContarA;
+import static ejerciciosprogramacion.Ejercicio09.potencia;
+import static ejerciciosprogramacion.Ejercicio14.serie_14;
+import static ejerciciosprogramacion.Ejercicio16.Serie_16;
+import static ejerciciosprogramacion.Ejercicio19.Binario;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,10 +25,10 @@ public class EjerciciosProgramacion {
     /**
      * @param args the command line arguments
      */
-       public static void main(String[] args) {
+       public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        int x, y, opc=0;
-        String S1="",S2="",ingreso;
+        int x, y, z, opc=0;
+        String S1="",S2="",ingreso,frase,palabra;
         
        
         while(opc!=-1){
@@ -99,7 +107,8 @@ public class EjerciciosProgramacion {
 "Si se recibe una cadena vacía, una cadena vacía se debe devolver.\n Si sólo hay una palabra recibida, la misma palabra que se debe devolver.\n" +
 "La función recibirá una cadena y devolver una cadena.\n\n");
                 
-           Ejercicio6();
+          frase=JOptionPane.showInputDialog("Ingrese una frase : ");
+          orden_inverso(frase);
                 break;
 
             case 7:
@@ -111,6 +120,9 @@ public class EjerciciosProgramacion {
 "La función debe considerar la conversión: Todos los caracteres de AZ, A, E, I, O, U y Ñ.Otros caracteres seguirán siendo los mismos.\n" +
 "Limitación: La conversión debe hacerse teniendo en cuenta los valores ASCII. Obviamente no se puede utilizar las funciones proporcionadas por el lenguaje \n(toLowercase (), Lowercase (), etc.) No se puede tener una gran sentencia switch de los casos para cada letra, o un montón de if / else.\n" +
 "Esta función recibirá una cadena y devuelve una cadena");
+                //Ejercicio 7
+        frase=JOptionPane.showInputDialog("Ingrese Frase");
+        MayúsculasMinúsculas(frase);
                 break;
                 
             case 8:
@@ -120,6 +132,9 @@ public class EjerciciosProgramacion {
 "Si la función recibe: \". Ah, este es un texto de muestra, que da una lid de análisis\" \nLa función debe devolver 5, ya que cinco palabras tiene caracteres \"a\". (Ah, muestra, da, una, análisis).\n" +
 "La función recibirá una cadena y devolver un entero.\n" +
 "Limitaciones: No utilice el split (función), o similar.");
+                //Ejercicio 8
+          palabra=JOptionPane.showInputDialog("Ingrese una Frase");
+          ContarA(palabra);
                 break;
             case 9:
                 JOptionPane.showMessageDialog(null,"Ejercicio 9\nDado un número entero positivo determinar si es la potencia de dos de otro número entero."
@@ -128,13 +143,16 @@ public class EjerciciosProgramacion {
 "Si la función recibe 25, debe devolver TRUE, porque 5 ^ 2 = 25 Si la función recibe 1, debe devolver TRUE, porque 1 ^ 2 = 1 \nSi la función recibe 16, debe devolver TRUE, porque 4 ^ 2 = 16 Si la función recibe 14, debería devolver FALSE.\n" +
 "Limitación: No es posible utilizar las funciones de raíz cuadrada (sqrt () o similar),\n potenciación (pow () o similar). Sólo se permiten las operaciones aritméticas básicas (suma, resta, multiplicación, división), y las operaciones lógicas.\n" +
 "La función recibe un número entero positivo mayor que 0, y debe devolver un valor booleano.");
+                //Ejercicio 9
+        int numero=0;
+        potencia (numero);
                 break;
             case 10:
                 JOptionPane.showMessageDialog(null,"Ejercicio 10\n Un número perfecto es un número entero positivo que es igual a la suma de sus divisores apropiados.\n Por ejemplo, 6 es un número perfecto porque 6 = 1 +2 +3.\n" +
 "Crear una función que recibe dos valores X y Y, debe devolver \n el menor número perfecto encontrado, que es mayor o igual que X y menor o igual a Y. Si ningún número perfecto encontró, debe devolver -1.\n" +
 "Por ejemplo, si la función recibe X = 5, Y = 7, se debe devolver 6,\n porque 6 es el número perfecto menor entre 5 y 7.\n" +
 "La función recibirá dos enteros y devolver un entero.");
-                Ejercicio10();
+               
                 break;
 
             case 11:
@@ -172,6 +190,15 @@ public class EjerciciosProgramacion {
 "La función debe devolver el elemento Z de la serie generada por x y y.\n" +
 "Por ejemplo: Si la función recibe x = 5, y = 3, z = 3, devolverá 64, porque 64 es el elemento 3 º en la serie generada cuando x = 5 e y = 3.\n" +
 "La función recibirá 3 enteros, devolver un entero. ");
+                //Ejercicio 14
+        
+            int num=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en X"));
+            x = num;
+            int num1=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en Y"));
+            y = num1;
+            int num2=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en Z"));
+            z = num2;
+            JOptionPane.showMessageDialog(null, "El valor en X y Y es " + serie_14(x,y,z));
                 break;
             case 15:
                 JOptionPane.showMessageDialog(null,"Ejercicio 15\n Dada una matriz de enteros (positivos y negativos), encontrar el subconjunto contiguo con la suma más grande. Volver a la suma.\n" +
@@ -192,6 +219,16 @@ public class EjerciciosProgramacion {
 "Si la función recibe x = 8, y = 2, z = 4, la función debe devolver 464. Si la función recibe x = 5, y = 2, z = 2, la función debe devolver 10. Para cualquier caso en que Y> z, la función devolverá 0.\n" +
 "Para encontrar la relación entre y, z, y el resultado es parte del problema a resolver.\n" +
 "La función recibirá 3 enteros, y devolver un entero.");
+                //Ejercicio16
+        
+            int x1=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en X"));
+            x = x1;
+            int y2=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en X"));
+            y = y2;
+            int z2=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en X"));
+            z = z2;
+            JOptionPane.showMessageDialog(null, "La funcion es es " + Serie_16(x,y,z));
+                
                 break;
             case 17:
                 JOptionPane.showMessageDialog(null,"Ejercicio 17\n Las palabras a números\n" +
@@ -218,6 +255,11 @@ public class EjerciciosProgramacion {
 "Por ejemplo:\n" +
 "Si la función recibe 25, debe devolver 3. ¿Por qué? Debido a que 25 en binario es 11001, que tiene 3 unidades.\n" +
 "La función recibirá un entero y devolver un entero.");
+                 //Ejercicio 19
+                       
+            int x3=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor en X"));
+            x = x3;
+             Binario(x);
                 break;
             case 20:
                 JOptionPane.showMessageDialog(null,"Ejercicio 20\n En teoría de números, una partición de un entero positivo n, también denominada partición entera, es una forma de escribir n como suma de enteros positivos. Dos sumas que difieren sólo en el orden de sus sumandos se consideran la misma partición.\n" +
@@ -373,42 +415,12 @@ public class EjerciciosProgramacion {
               if (frase1[i]!=' ')
               {
                   System.out.print(frase1[i]);
+//                   JOptionPane.showMessageDialog(null,frase1[i]++);
               }
           }    
       
     }
-    public static void Ejercicio6 (){
-              String frase;
-      frase= JOptionPane.showInputDialog("Ingrese una frase : ");
-      String []Caracter=frase.split(" ");
-      for(int i=Caracter.length-1;i>=0;i--){
-          System.out.print(Caracter[i]+" ");
-      }
-      }
-    public static void Ejercicio10 (){
-    int x,y,S=0;
-        x=Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese un número inicial"));
-        y=Integer.parseInt(JOptionPane.showInputDialog(null,"ingrese otro número numero final"));
-         
-        for (int i = x; i <= y; i++) {
-            S=0; 
-            for (int j = 1  ; j < i; j++) {
-                if ((i % j)==0) {
-                    S =S+j;
-                }
-                if ((i==y)&&((i%j)!=0)) {
-                    S=0; 
-                }
-            }
-            if (S==i) {
-                JOptionPane.showMessageDialog(null, "El primer número perfecto menor entre "+ x+" y "+y+ " es = " +S);
-                i=y;
-            }
-        }
-            if(S==0) {
-                JOptionPane.showMessageDialog(null, "no hay números perfectos entre "+ x+" y "+y);
-            }
-    }
+    
 public static void Ejercicio13(){
     int n=0; int menor=0; int posicion =0;
         n=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el valor del entero n"));
@@ -433,6 +445,7 @@ public static void Ejercicio13(){
          for (int i :arregloauxiliar) {
         System.out.printf("%d ",i);
     }
+         
 
 }
 }
