@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class Ejercicio06 {
    public static String orden_inverso(String frase)throws IOException {
+       String f = " ";
 
 //      BufferedReader a=new BufferedReader(new InputStreamReader(System.in));
 
@@ -25,13 +26,15 @@ public class Ejercicio06 {
       JOptionPane.showMessageDialog(null, frase);
 
       for(int i=Caracter.length-1;i>=0;i--){
-          System.out.print(Caracter[i]+" ");
-          
-//          JOptionPane.showMessageDialog(null, Caracter[i]+ "");
-      }
-       return frase;
+           f =f + Caracter [i] + " ";
+//       
+           
+     }
+      JOptionPane.showMessageDialog(null, f);
+       return f;
       
 
     }
+   
     }
 
