@@ -21,7 +21,7 @@ public class Ejercicio11 {
  
     public static int Repite(int x,int y) {
         // TODO code application logic here
-         Scanner entrada=new Scanner(System.in);
+      
             
        
         
@@ -31,9 +31,11 @@ public class Ejercicio11 {
         for (int i = 0; i < x; i++) {
             for (int j = 0; j < y; j++) {
                 
-                System.out.println("Ingrese valor en Pos.: "+i+j);
-                valor=entrada.nextInt();
+                 int entrada1=Integer.parseInt(JOptionPane.showInputDialog("Ingrese valor en Pos.: "+i+j));
+                int entrada=entrada1;
+                valor=entrada;
                 matriz[i][j]=valor;
+                
                 
             }
             
@@ -73,7 +75,7 @@ public class Ejercicio11 {
                 numRepite = vectorcontndr[i];
             }
         }
-        System.out.println("El # que mas se repite es el: " + numRepite + 
+        JOptionPane.showMessageDialog(null,"El numero que mas se repite es el: " + numRepite + 
                 " Porque se repite " + cantRepite+" Veces en la matriz");  
         
          
