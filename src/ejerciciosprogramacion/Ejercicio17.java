@@ -25,6 +25,7 @@ public class Ejercicio17 {
         20, 30, 40, 50, 60, 70, 80, 90,
         100, 100, 200};
         
+//        numero=numero.toUpperCase();
         List lstLetras = java.util.Arrays.asList(Letras);
         StringTokenizer st = new StringTokenizer(numero);
         Integer numer = 0;

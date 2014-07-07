@@ -13,6 +13,7 @@ import static ejerciciosprogramacion.Ejercicio09.potencia;
 import static ejerciciosprogramacion.Ejercicio11.Repite;
 import static ejerciciosprogramacion.Ejercicio14.serie_14;
 import static ejerciciosprogramacion.Ejercicio16.Serie_16;
+import static ejerciciosprogramacion.Ejercicio17.letraanumeros;
 import static ejerciciosprogramacion.Ejercicio19.Binario;
 import java.io.IOException;
 import javax.swing.JOptionPane;
@@ -243,7 +244,13 @@ public class EjerciciosProgramacion {
 "Si la función recibe \"cero\", debe devolver 0. Si la función recibe \"Uno\", debería devolver 1. Si la función recibe \"once\", debería devolver 11. Si la función recibe \"trece\", debe devolver 13. Si la función recibe \"cincuenta y cinco\", debe devolver 55. Si la función recibe \"CIEN\", debe devolver 100. Si la función recibe \"Doscientos treinta y uno\", debe devolver 231.\n" +
 "Si la función no entiende la cadena, debe devolver -1\n" +
 "La función recibirá una cadena y devolver un entero.");
+                frase=JOptionPane.showInputDialog("Ingrese una numero en letras : ");
+                frase=frase.toUpperCase();
+          JOptionPane.showMessageDialog(null, letraanumeros(frase));
+          
                 break;
+                
+     
             case 18:
                 JOptionPane.showMessageDialog(null,"Ejercicio 17\n Cree una función que ordena una matriz de palabras en orden alfabético. El texto será siempre en minúsculas, y no contendrá ningún carácter especial o número. No utilice funciones de ordenación proporcionadas por el lenguaje (lectura de las limitaciones).\n" +
 "Por ejemplo:\n" +
